@@ -1,0 +1,103 @@
+cbuffer lightBuffer : register(b0)
+{
+	struct
+	{
+		float4 ambient;
+		float4 diffuse;
+		float4 specular;
+		float4 direction;
+	} light;
+};
+
+cbuffer materialBuffer : register(b1)
+{
+	struct
+	{
+		float3 ambient;
+		float1 padding1;
+		float3 diffuse;
+		float1 padding2;
+		float3 specular;
+		float1 padding3;
+
+		float1 alpha;
+		float3 padding4;
+		uint shininess;
+		float3 padding5;
+		uint illumination;
+		float3 padding6;
+
+	} material;
+
+	bool ambient_map;
+	float3 padding7;
+	bool diffuse_map;
+	float3 padding8;
+	bool specular_map;
+	float3 padding9;
+	bool shininess_map;
+	float3 padding10;
+	bool alpha_map;
+	float3 padding11;
+	bool normal_map;
+	float3 padding12;
+};
+
+struct PS_INPUT
+{
+	float4 position : SV_POSITION;
+	float2 texCoord : TEXCOORD0;
+	float3 normal : NORMAL;
+	float3 tangent : TANGENT;
+	float3 binormal : BINORMAL;
+	float3 viewDirection : TEXCOORD2;
+};
+
+SamplerState SampleType : register(s0);
+
+Texture2D ambient_map_texture : register(t0);
+Texture2D diffuse_map_texture : register(t1);
+Texture2D specular_map_texture : register(t2);
+Texture2D shininess_map_texture : register(t3);
+Texture2D alpha_map_texture : register(t4);
+Texture2D normal_map_texture : register(t5);
+
+float4 ModelPixelShader(PS_INPUT input) : SV_TARGET
+{
+	float2 texCoord = input.texCoord;
+	float3 normal = input.normal;
+	float3 lightDirection = -light.direction;
+	float3 viewDirection = input.viewDirection;
+	float3 diffuseColor = material.diffuse * light.diffuse.xyz;
+	float3 ambientColor = material.ambient * light.ambient.xyz;
+	float3 specularColor = material.specular * light.specular.xyz;
+	uint shininess = material.shininess;
+	float alpha = material.alpha;
+	
+	if (ambient_map == true) ambientColor *= ambient_map_texture.Sample(SampleType, texCoord);
+	if (diffuse_map == true) diffuseColor *= diffuse_map_texture.Sample(SampleType, texCoord);
+	if (specular_map == true) specularColor *= specular_map_texture.Sample(SampleType, texCoord);
+	if (shininess_map == true) shininess *= shininess_map_texture.Sample(SampleType, texCoord);
+	if (alpha_map == true) alpha *= alpha_map_texture.Sample(SampleType, texCoord);
+
+	if (normal_map == true)
+	{
+		float4 normalMap = normal_map_texture.Sample(SampleType, texCoord);
+		normalMap = (normalMap * 2.0f) - 1.0f;
+		float3 bumpNormal = input.normal + normalMap.x * input.tangent + normalMap.y * input.binormal;
+
+		normal = bumpNormal;
+	}
+	
+	float diffuse = saturate(dot(normal, lightDirection));
+	diffuseColor *= diffuse;
+
+	float3 reflection = normalize(2 * diffuse * normal - lightDirection); 
+    float specular = pow(saturate(dot(reflection, viewDirection)), shininess);
+
+	if (diffuse <= 0.0f) specular = 0.0f;
+
+	specularColor *= specular;
+
+	return float4(ambientColor + diffuseColor + specularColor, alpha);
+}

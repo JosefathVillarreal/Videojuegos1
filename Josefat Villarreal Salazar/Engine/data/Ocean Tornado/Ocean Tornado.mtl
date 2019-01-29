@@ -1,0 +1,184 @@
+newmtl Material10
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka Material10.png
+map_Kd Material10.png
+map_d Material10.png
+newmtl Material11
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka Material11.png
+map_Kd Material11.png
+map_d Material11.png
+newmtl s_00
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_00.png
+map_Kd s_00.png
+map_d s_00.png
+newmtl s_01
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_01.png
+map_Kd s_01.png
+map_d s_01.png
+newmtl s_02
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_02.png
+map_Kd s_02.png
+map_d s_02.png
+newmtl s_03
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_03.png
+map_Kd s_03.png
+map_d s_03.png
+newmtl s_04
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_04.png
+map_Kd s_04.png
+map_d s_04.png
+newmtl s_05
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_05.png
+map_Kd s_05.png
+map_d s_05.png
+newmtl s_06
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_06.png
+map_Kd s_06.png
+map_d s_06.png
+newmtl s_07
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_07.png
+map_Kd s_07.png
+map_d s_07.png
+newmtl s_08
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_08.png
+map_Kd s_08.png
+map_d s_08.png
+newmtl s_09
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_09.png
+map_Kd s_09.png
+map_d s_09.png
+newmtl s_10
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_10.png
+map_Kd s_10.png
+map_d s_10.png
+newmtl s_11
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_11.png
+map_Kd s_11.png
+map_d s_11.png
+newmtl s_12
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_12.png
+map_Kd s_12.png
+map_d s_12.png
+newmtl s_13
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_13.png
+map_Kd s_13.png
+map_d s_13.png
+newmtl s_14
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_14.png
+map_Kd s_14.png
+map_d s_14.png
+newmtl s_15
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_15.png
+map_Kd s_15.png
+map_d s_15.png
+newmtl s_16
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_16.png
+map_Kd s_16.png
+map_d s_16.png
+newmtl s_17
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_17.png
+map_Kd s_17.png
+map_d s_17.png
+newmtl s_18
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_18.png
+map_Kd s_18.png
+map_d s_18.png
+newmtl s_19
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_19.png
+map_Kd s_19.png
+map_d s_19.png
+newmtl s_20
+Ka 0.282353 0.282353 0.282353
+Kd 0.972549 0.972549 0.972549
+d 1
+Tr 1
+map_Ka s_20.png
+map_Kd s_20.png
+map_d s_20.png

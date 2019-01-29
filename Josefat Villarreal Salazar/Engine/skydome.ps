@@ -1,0 +1,19 @@
+Texture2D shaderTexture[2];
+SamplerState SampleType;
+
+cbuffer BufferType
+{
+	float change;
+	float3 padding;
+};
+
+struct PixelInputType
+{
+    float4 position : SV_POSITION;
+	float2 tex : TEXCOORD0;
+};
+
+float4 SkydomePixelShader(PixelInputType input) : SV_TARGET
+{
+    return lerp(shaderTexture[0].Sample(SampleType, input.tex), shaderTexture[1].Sample(SampleType, input.tex), change);
+}

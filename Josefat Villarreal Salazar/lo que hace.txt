@@ -1,0 +1,3 @@
+con el espacio se hace los proyectiles continuos
+con el click izquierdo son los proyectiles uno por uno
+colisiona el persona con los vasos y como colisiona con uno al ras del suelo, ya no avanza
